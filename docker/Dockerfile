@@ -15,6 +15,9 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
   \
   && apt update && apt install -yqq nodejs npm \
   \
+  &&  curl -sS https://get.symfony.com/cli/installer | bash \
+  &&  mv /root/.symfony/bin/symfony /usr/local/bin \
+  \
   &&  docker-php-ext-configure \
   intl \
   &&  docker-php-ext-install \
